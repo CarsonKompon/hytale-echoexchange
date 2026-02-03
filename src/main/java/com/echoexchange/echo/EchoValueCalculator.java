@@ -119,8 +119,8 @@ public class EchoValueCalculator {
     
     private int calculateFallbackValue(@Nonnull Item item) {
         int itemLevel = item.getItemLevel();
-        int baseValue = itemLevel * itemLevel;
-        return (Math.max(1, baseValue * (101 - item.getMaxStack()) / 100));
+        int baseValue = itemLevel * itemLevel * Math.max((101 - item.getMaxStack()) / 10, 1 );
+        return (Math.max(1, baseValue));
     }
     
     public void clearCache() {

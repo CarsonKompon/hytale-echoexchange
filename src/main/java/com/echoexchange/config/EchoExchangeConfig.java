@@ -42,6 +42,14 @@ public class EchoExchangeConfig {
 
     public EchoExchangeConfig() {
         
+        echoValueOverrides.put("Ingredient_Bar_Copper", 100);
+        echoValueOverrides.put("Ingredient_Bar_Iron", 1000);
+        echoValueOverrides.put("Ingredient_Bar_Gold", 2000);
+        echoValueOverrides.put("Ingredient_Bar_Silver", 2000);
+        echoValueOverrides.put("Ingredient_Bar_Thorium", 5000);
+        echoValueOverrides.put("Ingredient_Bar_Cobalt", 10000);
+        echoValueOverrides.put("Ingredient_Bar_Adamantite", 20000);
+        
         // Initialize upgrade slots matching SimpleStorage's progression
         upgradeSlots.add(new UpgradeSlotConfig("Ingredient_Stick", 100));
         upgradeSlots.add(new UpgradeSlotConfig("Ingredient_Fibre", 100));
