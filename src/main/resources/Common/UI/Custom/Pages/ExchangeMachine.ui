@@ -48,7 +48,7 @@ Group #PageLayout {
       }
 
       Group #ContentArea {
-        Anchor: (Top: 60, Left: 20, Right: 20, Bottom: 20);
+        Anchor: (Top: 60, Left: 5, Right: 5, Bottom: 20);
         LayoutMode: Top;
 
         // Echo Balance Display
@@ -112,7 +112,7 @@ Group #PageLayout {
 
           // Scrollable grid for discovered items
           Group #DiscoveredItemsScroll {
-            Anchor: (Top: 30, Left: 10, Right: 10, Bottom: 10);
+            Anchor: (Top: 20, Left: 5, Right: 5, Bottom: 10);
             LayoutMode: TopScrolling;
             Background: (Color: #1a1425);
             ScrollbarStyle: $C.@DefaultScrollbarStyle;

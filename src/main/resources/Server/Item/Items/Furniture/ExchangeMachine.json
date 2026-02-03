@@ -3,6 +3,7 @@
     "Name": "Exchange Machine",
     "Description": "Exchange items for Echoes and transmute them into other discovered items."
   },
+  "Quality": "Rare",
   "PlayerAnimationsId": "Block",
   "Categories": [],
   "Icon": "Icons/ItemsGenerated/ExchangeMachine.png",
