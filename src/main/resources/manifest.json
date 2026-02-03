@@ -1,0 +1,21 @@
+{
+    "Group": "com.echoexchange",
+    "Name": "Echo Exchange",
+    "Version": "0.1.0",
+    "Description": "Equivalent Exchange style transmutation system with Echo energy",
+    "Authors": [
+        {
+            "Name": "Echo Exchange Team"
+        }
+    ],
+    "ServerVersion": "*",
+    "Dependencies": {
+        
+    },
+    "OptionalDependencies": {
+        
+    },
+    "DisabledByDefault": false,
+    "Main": "com.echoexchange.EchoExchangePlugin",
+    "IncludesAssetPack": true
+}

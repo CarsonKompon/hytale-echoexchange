@@ -1,0 +1,77 @@
+{
+  "TranslationProperties": {
+    "Name": "Exchange Machine",
+    "Description": "Convert items into Echoes and transmute learned items"
+  },
+  "PlayerAnimationsId": "Block",
+  "Categories": [],
+  "Icon": "Icons/ItemsGenerated/ExchangeMachine.png",
+  "IconProperties": {
+    "Rotation": [22.5, 45, 22.5],
+    "Scale": 0.55,
+    "Translation": [0, -15]
+  },
+  "BlockType": {
+    "BlockParticleSetId": "Wood",
+    "BlockSoundSetId": "Wood",
+    "CustomModel": "Blocks/ExchangeMachine/ExchangeMachine.blockymodel",
+    "CustomModelAnimation": "Blocks/ExchangeMachine/idle.blockyanim",
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/ExchangeMachine/ExchangeMachine_Texture.png",
+        "Weight": 1
+      }
+    ],
+    "DrawType": "Model",
+    "Flags": {
+      "IsUsable": true
+    },
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Woods"
+      }
+    },
+    "HitboxType": "Chest_Large",
+    "Material": "Solid",
+    "Opacity": "Transparent",
+    "ParticleColor": "#6a4c9e",
+    "State": {
+      "Id": "container",
+      "Capacity": 100,
+      "Definitions": {
+        "CloseWindow": {
+          "InteractionSoundEventId": "SFX_SimpleStorage_Close",
+          "CustomModelAnimation": "Blocks/ExchangeMachine/idle.blockyanim"
+        },
+        "OpenWindow": {
+          "InteractionSoundEventId": "SFX_SimpleStorage_Open",
+          "CustomModelAnimation": "Blocks/ExchangeMachine/idle.blockyanim"
+        },
+        "Scribbling1": {
+          "CustomModelAnimation": "Blocks/ExchangeMachine/scribble.blockyanim"
+        },
+        "Scribbling2": {
+          "CustomModelAnimation": "Blocks/ExchangeMachine/scribble.blockyanim"
+        }
+      }
+    },
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "VariantRotation": "NESW",
+    "Interactions": {
+      "Primary": "Break_Container",
+      "Use": "Open_ExchangeMachine"
+    }
+  },
+  "Tags": {
+    "Type": ["Furniture", "Transmutation", "Storage"]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Wood",
+  "ItemLevel": 20,
+  "MaxStack": 1
+}

@@ -1,0 +1,21 @@
+{
+  "TranslationProperties": {
+    "Name": "Echo Scroll"
+  },
+  "Quality": "Rare",
+  "Icon": "Icons/ItemsGenerated/EchoScroll.png",
+  "IconProperties": {
+    "Rotation": [0, 45, 0],
+    "Scale": 0.6,
+    "Translation": [0, -13]
+  },
+  "Model": "Blocks/Miscellaneous/Scrolls.blockymodel",
+  "Texture": "Items/Furniture/Scrolls_Texture.png",
+  "PlayerAnimationsId": "Item",
+  "Tags": {
+    "Type": ["Scroll", "Magic", "Ingredient"]
+  },
+  "ItemSoundSetId": "ISS_Items_Gems",
+  "ItemLevel": 1,
+  "MaxStack": 1
+}

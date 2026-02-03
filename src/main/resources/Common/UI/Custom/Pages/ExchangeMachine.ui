@@ -1,0 +1,294 @@
+// Exchange Machine Page UI
+// Full UI for burning items and transmuting discovered items
+
+$C = "../Common.ui";
+
+@SlotSize = 74;
+@SlotSpacing = 2;
+@ContainerWidth = 717;
+@SidePanelWidth = 300;
+@HorizontalPanelSpacing = 38;
+@PanelSpacing = 8;
+
+// Total page width: left spacer + center panel + spacing + right panel
+@TotalPageWidth = @SidePanelWidth + @HorizontalPanelSpacing + @ContainerWidth + @HorizontalPanelSpacing + @SidePanelWidth;
+
+$C.@PageOverlay {}
+
+Group #PageLayout {
+  Anchor: (Width: @TotalPageWidth, Top: 178, Bottom: 20);
+  LayoutMode: Left;
+
+  // Left spacer for centering
+  Group #LeftSpacer {
+    Anchor: (Width: @SidePanelWidth + @HorizontalPanelSpacing);
+  }
+
+  // Main content area
+  Group #MainLayout {
+    Anchor: (Width: @ContainerWidth);
+    LayoutMode: Top;
+
+    // Exchange Machine Container
+    $C.@Container #ExchangeContainer {
+      Anchor: (Width: @ContainerWidth, Bottom: @PanelSpacing);
+
+      #Title {
+        LayoutMode: Left;
+
+        $C.@Title {
+          @Text = "Exchange Machine";
+        }
+        
+        Group {
+          FlexWeight: 1;
+        }
+        
+        $C.@HeaderSearch {}
+      }
+
+      Group #ContentArea {
+        Anchor: (Top: 60, Left: 20, Right: 20, Bottom: 20);
+        LayoutMode: Top;
+
+        // Echo Balance Display
+        Group #EchoDisplay {
+          Anchor: (Height: 60);
+          LayoutMode: Top;
+
+          Group {
+            Anchor: (Height: 5);
+          }
+
+          Label #EchoBalanceLabel {
+            Text: "Echoes: 0 / 10000";
+            Style: (
+              FontSize: 18,
+              TextColor: #a78bfa,
+              HorizontalAlignment: Center
+            );
+            Anchor: (Height: 25);
+          }
+
+          Group {
+            Anchor: (Height: 5);
+          }
+
+          // Progress bar (visual representation)
+          Group #EchoProgressBarBackground {
+            Anchor: (Height: 20, Left: 10, Right: 10);
+            Background: (Color: #1a1425);
+            Padding: (Full: 2);
+            
+            ProgressBar #EchoProgressBar {
+              Anchor: (Top: 0, Left: 0, Right: 0, Bottom: 0);
+              BarTexturePath: "SlotHighlight.png";
+            }
+          }
+
+          Group {
+            Anchor: (Height: 5);
+          }
+        }
+
+        // Discovered Items Section
+        Group #DiscoveredSection {
+          Anchor: (Height: 250);
+          LayoutMode: Top;
+
+          Label {
+            Text: "Discovered Items (Click to Transmute)";
+            Style: (
+              FontSize: 16,
+              TextColor: #c4b5fd,
+              HorizontalAlignment: Center
+            );
+            Anchor: (Height: 25);
+          }
+
+          Group {
+            Anchor: (Height: 5);
+          }
+
+          // Scrollable grid for discovered items
+          Group #DiscoveredItemsScroll {
+            Anchor: (Top: 30, Left: 10, Right: 10, Bottom: 10);
+            LayoutMode: TopScrolling;
+            Background: (Color: #1a1425);
+            ScrollbarStyle: $C.@DefaultScrollbarStyle;
+            
+            Group #DiscoveredItemsGrid {
+              Anchor: (Width: 690);
+              LayoutMode: LeftCenterWrap;
+
+              Label #NoItemsLabel {
+                Text: "Burn items to discover them!";
+                Style: (
+                  FontSize: 14,
+                  TextColor: #9ca3af,
+                  HorizontalAlignment: Center,
+                  VerticalAlignment: Center
+                );
+                Anchor: (Height: 200);
+              }
+            }
+          }
+        }
+
+        Group {
+          Anchor: (Height: 10);
+        }
+      }
+    }
+
+    // Player Inventory Container
+    $C.@Container #InventoryContainer {
+      Anchor: (Width: @ContainerWidth);
+
+      #Title {
+        LayoutMode: Left;
+
+        $C.@Title {
+          @Text = "Your Inventory (Click items to burn)";
+        }
+      }
+
+      #Content {
+        LayoutMode: Top;
+
+        // Player inventory (4 rows of 9 - combines storage and hotbar)
+        Group #PlayerInventoryWrapper {
+          Anchor: (Height: 380);
+
+          Group #PlayerInventoryContainer {
+            Anchor: (Height: 380, Width: 690);
+            LayoutMode: Top;
+            Background: #202c3b(0);
+            Padding: (Full: 0);
+
+            Group #PlayerInventory {
+              Anchor: (Width: 690);
+              LayoutMode: LeftCenterWrap;
+            }
+          }
+        }
+      }
+    }
+  } // Close #MainLayout
+
+  // Right spacer
+  Group #RightSpacerBefore {
+    Anchor: (Width: @HorizontalPanelSpacing);
+  }
+
+  // Info Panel - Block icon and upgrades
+  $C.@Container #InfoContainer {
+    Anchor: (Width: @SidePanelWidth);
+
+    #Title {
+      $C.@Title {
+        @Text = "Exchange Info";
+      }
+    }
+
+    #Content {
+      LayoutMode: Top;
+
+      // Block icon preview area
+      Group #BlockPreview {
+        Anchor: (Height: 150);
+        LayoutMode: Middle;
+
+        // Block icon - large centered display
+        ItemSlot #BlockIcon {
+          Anchor: (Width: 100, Height: 100);
+          ShowQualityBackground: true;
+        }
+      }
+
+      // Separator
+      Group {
+        Anchor: (Height: 1, Bottom: 12);
+        Background: #1b2533;
+      }
+
+      // Upgrades section
+      Group #UpgradesSection {
+        LayoutMode: Top;
+        Padding: (Horizontal: 8);
+
+        // Upgrades header
+        Group {
+          LayoutMode: Left;
+          Anchor: (Height: 30, Bottom: 8);
+
+          Label {
+            Text: "UPGRADES";
+            Style: (
+              FontSize: 15,
+              TextColor: #b4c8c9,
+              RenderBold: true,
+              RenderUppercase: true,
+              VerticalAlignment: Center,
+              FontName: "Secondary"
+            );
+          }
+
+          Group {
+            FlexWeight: 1;
+          }
+
+          Label #UpgradeCount {
+            Text: "0 / 18";
+            Style: (
+              FontSize: 15,
+              TextColor: #96a9be,
+              RenderBold: true,
+              VerticalAlignment: Center
+            );
+          }
+        }
+
+        // Upgrade slots container - dynamically populated
+        Group #UpgradeSlotsWrapper {
+          LayoutMode: Middle;
+          Anchor: (Height: 460);
+
+          Group #UpgradeSlotsContainer {
+            LayoutMode: LeftCenterWrap;
+            Anchor: (Width: 230);
+            Padding: (Top: 4);
+
+            // Upgrade slots are dynamically appended here from UpgradeSlot.ui
+          }
+        }
+
+        // Upgrade info text
+        Group #UpgradeInfo {
+          Anchor: (Height: 30, Top: 4);
+
+          Label #InfoText {
+            Text: "Click to add items";
+            Style: (FontSize: 12, TextColor: #666666, Alignment: Center, RenderItalics: true);
+            Anchor: (Full: 0);
+          }
+        }
+
+        // Capacity info
+        Group #CapacityInfoWrapper {
+          Anchor: (Height: 20, Top: 4);
+
+          Label #CapacityInfo {
+            Text: "Each upgrade doubles capacity";
+            Style: (
+              FontSize: 11,
+              TextColor: #96a9be,
+              HorizontalAlignment: Center
+            );
+            Anchor: (Full: 0);
+          }
+        }
+      } // Close UpgradesSection
+    } // Close #Content
+  } // Close #InfoContainer
+} // Close #PageLayout
