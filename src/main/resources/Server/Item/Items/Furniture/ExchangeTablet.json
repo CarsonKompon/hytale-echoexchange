@@ -1,7 +1,7 @@
 {
   "TranslationProperties": {
-    "Name": "Exchange Tablet",
-    "Description": "A portable Exchange Machine that stores Echo energy and upgrades. Right-click to open."
+    "Name": "Exchange Script",
+    "Description": "A portable Exchange Machine that stores Echoes and transmutes them into other discovered items."
   },
   "Quality": "Epic",
   "Categories": ["Tools", "Magic"],

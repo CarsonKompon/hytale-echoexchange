@@ -1,7 +1,7 @@
 {
   "TranslationProperties": {
     "Name": "Exchange Machine",
-    "Description": "Convert items into Echoes and transmute learned items"
+    "Description": "Exchange items for Echoes and transmute them into other discovered items."
   },
   "PlayerAnimationsId": "Block",
   "Categories": [],
