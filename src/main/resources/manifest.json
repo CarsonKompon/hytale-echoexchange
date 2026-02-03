@@ -1,13 +1,16 @@
 {
-    "Group": "com.echoexchange",
+    "Group": "com.carsonk",
     "Name": "Echo Exchange",
-    "Version": "0.1.0",
-    "Description": "Equivalent Exchange style transmutation system with Echo energy",
+    "Version": "1.0.0",
+    "Description": "Equivalent Exchange-esque transmutation system with Echo energy",
     "Authors": [
         {
-            "Name": "Echo Exchange Team"
+            "Name": "Carson Kompon",
+            "Email": "me@carsonk.net",
+            "Url": "https://carsonk.net"
         }
     ],
+    "Website": "https://carsonk.net",
     "ServerVersion": "*",
     "Dependencies": {
         
