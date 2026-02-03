@@ -6,6 +6,32 @@
   "Quality": "Epic",
   "Categories": ["Tools", "Magic"],
   "Icon": "Icons/ItemsGenerated/ExchangeTablet.png",
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Fabric_Scrap_Linen",
+        "Quantity": 50
+      },
+      {
+        "ItemId": "Ingredient_Fabric_Scrap_Cindercloth",
+        "Quantity": 30
+      },
+      {
+        "ItemId": "Ingredient_Void_Essence",
+        "Quantity": 10
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Workbench",
+        "Type": "Crafting",
+        "Categories": [
+          "Workbench_Tinkering"
+        ]
+      }
+    ]
+  },
   "IconProperties": {
     "Rotation": [0, 0, 0],
     "Scale": 0.6,

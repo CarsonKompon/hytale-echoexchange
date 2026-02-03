@@ -6,6 +6,32 @@
   "PlayerAnimationsId": "Block",
   "Categories": [],
   "Icon": "Icons/ItemsGenerated/ExchangeMachine.png",
+  "Recipe": {
+    "TimeSeconds": 3,
+    "Input": [
+      {
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 20
+      },
+      {
+        "ItemId": "Ingredient_Bar_Silver",
+        "Quantity": 10
+      },
+      {
+        "ItemId": "Ingredient_Void_Essence",
+        "Quantity": 5
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Workbench",
+        "Type": "Crafting",
+        "Categories": [
+          "Workbench_Survival"
+        ]
+      }
+    ]
+  },
   "IconProperties": {
     "Rotation": [22.5, 45, 22.5],
     "Scale": 0.55,
